@@ -1,0 +1,42 @@
+{
+  "name": "LTTN",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "keywords": [],
+  "author": "TEAM",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "mongoose": "^4.6.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "async": "^2.0.0-rc.6",
+    "babel-register": "^6.9.0",
+    "babelify": "^7.3.0",
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "browserify": "^13.0.1",
+    "https": "^1.0.0",
+    "mongoose": "^4.5.2",
+    "morgan": "^1.7.0",
+    "socket.io": "*",
+    "socketio-file-upload": "*",
+    "uglify": "^0.1.5",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  }
+}
