@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 
-var eventSchema = new mongoose.Schema({ 
+var eventSchema = new mongoose.Schema({
+ eventname:String,
  created: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
  arUser:[{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
  starttime: Date,
