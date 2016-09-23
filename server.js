@@ -24,7 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 var userserver = require('./src-server/userserver');
+var eventserver = require('./src-server/eventserver');
 userserver(app);
+eventserver(app);
 
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
