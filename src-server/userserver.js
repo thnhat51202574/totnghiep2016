@@ -1,6 +1,6 @@
 
 var User = require('../models/User');
-var bcrypt =require('bcrypt');
+// var bcrypt =require('bcrypt');
 var moment = require('moment');
 const SALT_WORK_FACTOR = 10;
 function userserver(app) {
@@ -13,13 +13,13 @@ app.post('/api/user',function(req,res,next){
   var birthday = req.body.birthday;
   birthday = moment();
   var friends_id = req.body.friends_id;
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-        if (err) return next(err);
-        // hash the password along with our new salt
-        bcrypt.hash(password, salt, function(err1, hash) {
-            if (err) return next(err);
-            // override the cleartext password with the hashed one
-            password = hash;
+  // bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  //       if (err) return next(err);
+  //       // hash the password along with our new salt
+  //       bcrypt.hash(password, salt, function(err1, hash) {
+  //           if (err) return next(err);
+  //           // override the cleartext password with the hashed one
+  //           password = hash;
         User.findOne({username:username}, function(err2, alreadyUser){
           if((err2)||(!alreadyUser)){
               var user = new User({
@@ -41,11 +41,11 @@ app.post('/api/user',function(req,res,next){
           }
         });    
           });
-  });     
+  // });     
 
 
 
-});
+// });
 app.get('/api/user',function(req,res,next){
   User
   .find()
@@ -88,14 +88,14 @@ app.put('/api/user',function(req,res,next){
   var firstName =req.body.firstName;
   var lastName =req.body.lastName;
   var birthday = req.body.birthday;
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-        if (err) return next(err);
-        // hash the password along with our new salt
-        bcrypt.hash(password, salt, function(err1, hash) {
-            if (err) return next(err);
-            // override the cleartext password with the hashed one
-            password = hash;
-          });
+  // bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  //       if (err) return next(err);
+  //       // hash the password along with our new salt
+  //       bcrypt.hash(password, salt, function(err1, hash) {
+  //           if (err) return next(err);
+  //           // override the cleartext password with the hashed one
+  //           password = hash;
+  //         });
           User.update(
             {_id:id},
             {
@@ -111,7 +111,7 @@ app.put('/api/user',function(req,res,next){
             res.send({message:username + " had been update successfully"});
           });
       });
-});
+// });
 
 app.get('/api/user/:id',function(req,res,next){
 
